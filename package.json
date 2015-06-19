@@ -1,0 +1,28 @@
+{
+  "name": "currency-math",
+  "version": "0.0.2",
+  "description": "Basic math operations for currency stored as strings.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gojohnnygo/currencyMath.git"
+  },
+  "keywords": [
+    "currency",
+    "string",
+    "strings",
+    "math"
+  ],
+  "author": "Johnny Nguyen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gojohnnygo/currencyMath/issues"
+  },
+  "homepage": "https://github.com/gojohnnygo/currencyMath",
+  "devDependencies": {
+    "jasmine": "^2.3.1"
+  }
+}
