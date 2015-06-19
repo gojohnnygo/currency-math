@@ -22,14 +22,14 @@ console.log(product) // '$11.50'
 
 ## Adding String Values WITH currency-math
 ```
-var currency = require('currencyMath');
+var currency = require('currency-math');
 var product = currency.sum('$10.50', '$1.00'); 
 console.log(product) // '$11.50'
 ```
 
 ## Examples
 ```
-var currency = require('currencyMath');
+var currency = require('currency-math');
 
 var sum = currency.sum('$10.50', '$1.00', '$3.20'); // '$14.70'
 
