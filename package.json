@@ -4,11 +4,11 @@
   "description": "Basic math operations for currency stored as strings.",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jasmine ./spec/spec.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gojohnnygo/currencyMath.git"
+    "url": "https://github.com/gojohnnygo/currency-math.git"
   },
   "keywords": [
     "currency",
@@ -19,9 +19,9 @@
   "author": "Johnny Nguyen",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/gojohnnygo/currencyMath/issues"
+    "url": "https://github.com/gojohnnygo/currency-math/issues"
   },
-  "homepage": "https://github.com/gojohnnygo/currencyMath",
+  "homepage": "https://github.com/gojohnnygo/currency-math",
   "devDependencies": {
     "jasmine": "^2.3.1"
   }
