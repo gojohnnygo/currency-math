@@ -3,21 +3,21 @@ Why use currency-math? Because handling currency in strings is a pain.
 
 ## Adding String Values WITHOUT currency-math
 ```
-var product;
+var sum;
 var value1 = '$10.50'
 var value2 = '$1.00'
 
 value1 = value1.substr(1);
 value2 = value2.substr(1);
 
-product = parseFloat(value1) + parseFloat(value2);
+sum = parseFloat(value1) + parseFloat(value2);
 
 // incase JavaScript gets weird with floats
-product = Math.round(+(product + 'e' + 2));
-product = +(product + 'e' + (-2));
+sum = Math.round(+(sum + 'e' + 2));
+sum = +(sum + 'e' + (-2));
 
-product = '$' + product.toFixed(2);
-console.log(product) // '$11.50'
+sum = '$' + sum.toFixed(2);
+console.log(sum) // '$11.50'
 ```
 
 ## Adding String Values WITH currency-math
