@@ -4,8 +4,8 @@ var _thousands = Symbol('thousands');
 var _decimal = Symbol('decimal');
 
 class Currency {
-  constructor(value = 0, currency = '$', thousands = ',', decimal = '.') {
-    this[_value] = toFloat(value);
+  constructor(value, currency = '$', thousands = ',', decimal = '.') {
+    this[_value] = !value ? 0 : this.toFloat([value])[0];
     this[_currency] = currency;
     this[_thousands] = thousands;
     this[_decimal] = decimal;
@@ -13,13 +13,12 @@ class Currency {
 
   toFloat(values) {
     let formattedValues = [];
-
     values.forEach(function(value) {
-      if (value.constructor.name !== 'Number' || value.constructor.name !== 'String') {
+      if (value.constructor.name !== 'Number' && value.constructor.name !== 'String') {
         console.log('Constructor name, ' + value.constructor.name + ', must be "Number" or "String".')
       }
 
-      if (this.currencyEnum[value[0]]) {
+      if (value.constructor.name === "String" && this.currencyEnum[value[0]]) {
         value = value.substr(1);
       }
       
@@ -31,10 +30,11 @@ class Currency {
       formattedValues.push(value);
     });
 
-    return formattedValues;
+    return formattedValues.length ? formattedValues : 0;
   }
 
   toString() {
+    console.log(typeof this[_value]);
     return this[_currency] + this[_value].toFixed(2);
   }
 
@@ -78,18 +78,18 @@ class Currency {
   }
 
   checkEnum(type, value) {
-    let enum = type + 'Enum';
-    let _enum = '_' + type;
+    let enumeration = type + 'Enum';
+    let _symbol = '_' + type;
     
-    if (this[enum][value]) {
-      this[_enum] = value;
+    if (this[enumeration][value]) {
+      this[_symbol] = value;
     } else {
       console.log(type + ', is not supported. Must be ' + this.currencyEnum + '.');
     }
   }
 
   add(...incrementors) {
-    incrementors = toFloat(incrementors);
+    incrementors = this.toFloat(incrementors);
 
     this[_value] = incrementors.reduce(function(prev, curr) {
       return prev + curr;
@@ -99,7 +99,7 @@ class Currency {
   }
 
   subtract(...decrementors) {
-    decrementors = toFloat(decrementors);
+    decrementors = this.toFloat(decrementors);
 
     this[_value] = decrementors.reduce(function(prev, curr) {
       return prev + (-Math.abs(curr));
@@ -109,7 +109,7 @@ class Currency {
   }
 
   multiply(...multipliers) {
-    multipliers = toFloat(multipliers);
+    multipliers = this.toFloat(multipliers);
 
     this[_value] = multipliers.reduce(function(prev, curr) {
       return prev * curr;
@@ -119,7 +119,7 @@ class Currency {
   }
 
   divide(...divisors) {
-    divisors = toFloat(divisors);
+    divisors = this.toFloat(divisors);
 
     this[_value] = divisors.reduce(function(prev, curr) {
       return prev / curr;
