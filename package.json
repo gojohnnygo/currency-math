@@ -4,7 +4,7 @@
   "description": "Basic math operations for currency stored as strings.",
   "main": "main.js",
   "scripts": {
-    "test": "jasmine ./spec/spec.js"
+    "test": "karma start"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,16 @@
   },
   "homepage": "https://github.com/gojohnnygo/currency-math",
   "devDependencies": {
-    "jasmine": "^2.3.1"
+    "babel": "^5.6.4",
+    "babelify": "^6.1.2",
+    "browserify": "^10.2.4",
+    "gulp": "^3.9.0",
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.12.36",
+    "karma-babel-preprocessor": "^5.2.1",
+    "karma-browserify": "^4.2.1",
+    "karma-jasmine": "^0.3.5",
+    "karma-phantomjs-launcher": "^0.2.0",
+    "phantomjs": "^1.9.17"
   }
 }
