@@ -1,44 +1,21 @@
-import {Calculator} from './calculator';
+import {Currency} from './src/currency';
 
-describe('Calculator', () => {
+describe('Instatiation', () => {
+  it('expects instatiation', () => {  
+    var currency = new Currency();
+    expect(currency.constructor.name).toEqual('Currency');
+  }  
 
-   it('should add two numbers', () => {
-    console.log('holler')
+  it('expects instatiation with a number', () => {  
+    var currency = new Currency(4);
+    expect(currency).toEqual('$4.00');
+  }
 
-       let calculator = new Calculator();
-
-       let sum = calculator.add(1,4);
-
-       expect(sum).toBe(5);
-   });
-
-    it('should subtract two numbers', () => {
-
-        let calculator = new Calculator();
-
-        let sum = calculator.subtract(4,1);
-
-        expect(sum).toBe(3);
-    });
-
+  it('expects instatiation with string', () => {  
+    var currency = new Currency('$4.00');
+    expect(currency).toEqual('$4.00');
+  }
 });
-
-// describe('Instatiation', () => {
-//   it('expects instatiation', () => {  
-//     var currency = new Currency();
-//     expect(currency.constructor.name).toEqual('Currency');
-//   }  
-
-//   it('expects instatiation with a number', () => {  
-//     var currency = new Currency(4);
-//     expect(currency).toEqual('$4.00');
-//   }
-
-//   it('expects instatiation with string', () => {  
-//     var currency = new Currency('$4.00');
-//     expect(currency).toEqual('$4.00');
-//   }
-// });
 
 // describe('Addition', () => {
 //   it('expects number arguments to be added to currency value', () => {  
